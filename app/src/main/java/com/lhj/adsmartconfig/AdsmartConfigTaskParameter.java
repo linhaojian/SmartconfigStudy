@@ -115,7 +115,6 @@ public class AdsmartConfigTaskParameter {
         //length + mac + ip + pw + crccode
         int[] comdiBuff = new int[comdataLength];
         comdiBuff[0] = comdataLength;
-        comdataLength = (comdataLength%2==0)?comdataLength: (comdataLength + 1);
         System.arraycopy(macbufff,0,comdiBuff,1,macbufff.length);
         System.arraycopy(ipbuff,0,comdiBuff,1+macbufff.length,ipbuff.length);
         for(int i=0;i<pwbuff.length;i++){
@@ -138,7 +137,10 @@ public class AdsmartConfigTaskParameter {
         for(int i=0;i<ipslength;i++){
             int b1 = i;
             int b2 = (combuff[comConut]&0xff);
-            int b3 = (combuff[comConut+1]&0xff);
+            int b3 = 0;
+            if((comConut+1)<combuff.length){
+                b3 = (combuff[comConut+1]&0xff);
+            }
             ips[i] = combinationFirstIp+"."+b1+"."+b2+"."+b3;
             comConut=comConut+2;
         }

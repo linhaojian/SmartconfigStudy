@@ -10,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0345b420-df4a-4c99-ac94-95e4e9905386" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
@@ -20,14 +19,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/AdsmartConfigTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/AdsmartConfigTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/AdsmartConfigTaskParameter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/AdsmartConfigTaskParameter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/pojo/AdsmartConfigEntity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/pojo/AdsmartConfigEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/pojo/GuideData.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/pojo/GuideData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/task/_AdasmartConfigTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/task/_AdasmartConfigTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/util/AdConNetUtil.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/util/AdConNetUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/util/CRC8.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/util/CRC8.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lhj/smartconfigstudy/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lhj/smartconfigstudy/MainActivity.java" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,21 +45,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_AdasmartConfigTask.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_AdasmartConfigTask.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/task/_AdasmartConfigTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="128" column="64" lean-forward="false" selection-start-line="128" selection-start-column="64" selection-end-line="128" selection-end-column="64" />
+            <state relative-caret-position="284">
+              <caret line="93" column="41" lean-forward="true" selection-start-line="93" selection-start-column="41" selection-end-line="96" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#_AdasmartConfigTask#0;class#_AdasmartConfigTask#0" expanded="false" />
                 <element signature="method#dealGuideData#0;class#_AdasmartConfigTask#0" expanded="false" />
                 <element signature="method#dealCombinationData#0;class#_AdasmartConfigTask#0" expanded="false" />
                 <element signature="method#execute#0;class#_AdasmartConfigTask#0" expanded="false" />
-                <element signature="e#5529#5674#0" expanded="true" />
-                <element signature="e#5673#5674#0" expanded="true" />
-                <element signature="e#5713#5858#0" expanded="true" />
-                <element signature="e#5857#5858#0" expanded="true" />
                 <element signature="method#interrupt#0;class#_AdasmartConfigTask#0" expanded="false" />
                 <element signature="method#setResults#0;class#_AdasmartConfigTask#0" expanded="false" />
               </folding>
@@ -74,31 +63,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdsmartConfigTaskParameter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdsmartConfigTaskParameter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/AdsmartConfigTaskParameter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="117" column="21" lean-forward="false" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="21" />
+            <state relative-caret-position="459">
+              <caret line="140" column="28" lean-forward="false" selection-start-line="140" selection-start-column="28" selection-end-line="140" selection-end-column="28" />
               <folding>
                 <element signature="method#setCombinationLimteCount#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
                 <element signature="method#setIntervalMillisecond#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
-                <element signature="e#1563#1564#0" expanded="true" />
-                <element signature="e#1596#1597#0" expanded="true" />
                 <element signature="method#getGuidiecombinationIntervalMillisecond#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
                 <element signature="method#setGuidiecombinationIntervalMillisecond#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
                 <element signature="method#setIntervalGudieComCount#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
                 <element signature="method#getGuideIp#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UdpAdConServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/udp/UdpAdConServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
-              <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -1878,8 +1855,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/AdsmartConfigTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/util/AdConNetUtil.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/udp/UdpAdConServer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/task/_AdasmartConfigTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/AdsmartConfigTaskParameter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/task/_AdasmartConfigTask.java" />
       </list>
     </option>
   </component>
@@ -2192,8 +2169,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2300,7 +2275,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2308,9 +2285,9 @@
     <property name="android.sdk.path" value="D:/android/android-sdk-windows" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="device.picker.selection" value="B2T0216607003636" />
+    <property name="device.picker.selection" value="302abe4b" />
     <property name="android.profiler.active" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/fluid-slider-android-master" />
+    <property name="last_opened_file_path" value="D:/flutterworkspaces/flutter_fisrt_app" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -2429,7 +2406,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1521003631459" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1521007795771" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2477,7 +2454,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1521003631460" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1521007795771" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2652,7 +2629,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1521003631462" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1521007795772" />
       </method>
     </configuration>
     <list size="2">
@@ -2697,8 +2674,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2708,10 +2684,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6169265" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4871795" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6588629" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2721,8 +2697,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Flutter Inspector" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2912,31 +2888,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/udp/UdpAdConClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="785">
-          <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="48" column="15" lean-forward="false" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="15" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/util/CRC8.java">
@@ -2991,45 +2960,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/udp/UdpAdConServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
+        <state relative-caret-position="500">
           <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/udp/UdpAdConClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/AdsmartConfigTaskParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="140" column="28" lean-forward="false" selection-start-line="140" selection-start-column="28" selection-end-line="140" selection-end-column="28" />
+          <folding>
+            <element signature="method#setCombinationLimteCount#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
+            <element signature="method#setIntervalMillisecond#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
+            <element signature="method#getGuidiecombinationIntervalMillisecond#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
+            <element signature="method#setGuidiecombinationIntervalMillisecond#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
+            <element signature="method#setIntervalGudieComCount#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
+            <element signature="method#getGuideIp#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/task/_AdasmartConfigTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="128" column="64" lean-forward="false" selection-start-line="128" selection-start-column="64" selection-end-line="128" selection-end-column="64" />
+        <state relative-caret-position="284">
+          <caret line="93" column="41" lean-forward="true" selection-start-line="93" selection-start-column="41" selection-end-line="96" selection-end-column="91" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#_AdasmartConfigTask#0;class#_AdasmartConfigTask#0" expanded="false" />
             <element signature="method#dealGuideData#0;class#_AdasmartConfigTask#0" expanded="false" />
             <element signature="method#dealCombinationData#0;class#_AdasmartConfigTask#0" expanded="false" />
             <element signature="method#execute#0;class#_AdasmartConfigTask#0" expanded="false" />
-            <element signature="e#5529#5674#0" expanded="true" />
-            <element signature="e#5673#5674#0" expanded="true" />
-            <element signature="e#5713#5858#0" expanded="true" />
-            <element signature="e#5857#5858#0" expanded="true" />
             <element signature="method#interrupt#0;class#_AdasmartConfigTask#0" expanded="false" />
             <element signature="method#setResults#0;class#_AdasmartConfigTask#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lhj/adsmartconfig/AdsmartConfigTaskParameter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="117" column="21" lean-forward="false" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="21" />
-          <folding>
-            <element signature="method#setCombinationLimteCount#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
-            <element signature="method#setIntervalMillisecond#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
-            <element signature="e#1563#1564#0" expanded="true" />
-            <element signature="e#1596#1597#0" expanded="true" />
-            <element signature="method#getGuidiecombinationIntervalMillisecond#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
-            <element signature="method#setGuidiecombinationIntervalMillisecond#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
-            <element signature="method#setIntervalGudieComCount#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
-            <element signature="method#getGuideIp#0;class#AdsmartConfigTaskParameter#0" expanded="false" />
           </folding>
         </state>
       </provider>
