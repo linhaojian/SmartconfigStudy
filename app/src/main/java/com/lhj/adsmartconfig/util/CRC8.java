@@ -2,7 +2,6 @@ package com.lhj.adsmartconfig.util;
 
 import android.util.Log;
 
-import com.espressif.iot.esptouch.util.ByteUtil;
 
 import java.util.Arrays;
 import java.util.zip.Checksum;

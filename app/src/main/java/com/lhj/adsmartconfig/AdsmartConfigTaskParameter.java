@@ -96,34 +96,42 @@ public class AdsmartConfigTaskParameter {
         return stringbuff;
     }
 
-    private int[] dealCombinaBuffIp(String ip,byte[] pwbuff){
+    private int[] dealCombinaBuffIp(String ip,byte[] pwbuff,String mac){
         int[] ipbuff = new int[4];
-        int comdataLength = (pwbuff.length+ipbuff.length+2);
+        int[] macbufff = new int[6];
+        int comdataLength = (pwbuff.length+ipbuff.length+macbufff.length+2);
         byte[] crcbuff = new byte[comdataLength-1];
         crcbuff[0] = (byte) comdataLength;
-        for(int i=0;i<ip.split("\\.").length;i++){
-            ipbuff[i] = Integer.parseInt(ip.split("\\.")[i]);
-            crcbuff[i+1] = (byte) Integer.parseInt(ip.split("\\.")[i]);
+        // 将mac数据存储到buff里面
+        for(int i=0;i<macbufff.length;i++){
+            macbufff[i] = Integer.parseInt(mac.split(":")[i],16);
+            crcbuff[i+1] = (byte) macbufff[i];
         }
-        comdataLength = (comdataLength%2==0)?comdataLength: (comdataLength + 1);
-        //length + ip + pw + crccode
+        // 将ip数据存储到buff里面
+        for(int i=0;i<ipbuff.length;i++){
+            ipbuff[i] = Integer.parseInt(ip.split("\\.")[i]);
+            crcbuff[i+1+macbufff.length] = (byte) ipbuff[i];
+        }
+        //length + mac + ip + pw + crccode
         int[] comdiBuff = new int[comdataLength];
         comdiBuff[0] = comdataLength;
-        System.arraycopy(ipbuff,0,comdiBuff,1,ipbuff.length);
+        comdataLength = (comdataLength%2==0)?comdataLength: (comdataLength + 1);
+        System.arraycopy(macbufff,0,comdiBuff,1,macbufff.length);
+        System.arraycopy(ipbuff,0,comdiBuff,1+macbufff.length,ipbuff.length);
         for(int i=0;i<pwbuff.length;i++){
-            comdiBuff[i+1+ipbuff.length] = pwbuff[i] & 0xff;
-            crcbuff[i+1+ipbuff.length] = (byte) (pwbuff[i] & 0xff);
+            comdiBuff[i+1+ipbuff.length+macbufff.length] = pwbuff[i] & 0xff;
+            crcbuff[i+1+ipbuff.length+macbufff.length] = (byte) comdiBuff[i+1+ipbuff.length+macbufff.length];
         }
         CRC8 crc8 = new CRC8();
         int crc8com = crc8.calcCrc8(crcbuff);
-        comdiBuff[1+ipbuff.length+pwbuff.length] = crc8com;
+        comdiBuff[1+ipbuff.length+pwbuff.length+macbufff.length] = crc8com;
         return comdiBuff;
     }
 
     public String[] getCombinationIp() {
         // 235.serial.data.data
         byte[] pwbuff = TextUtils.isEmpty(adsmartConfigEntity.getPw())?new byte[0]:adsmartConfigEntity.getPw().getBytes();
-        int[] combuff = dealCombinaBuffIp(adsmartConfigEntity.getLocalIp(),pwbuff);
+        int[] combuff = dealCombinaBuffIp(adsmartConfigEntity.getLocalIp(),pwbuff,adsmartConfigEntity.getRouterMac());
         int ipslength = (combuff.length/2) + (combuff.length%2);
         String[] ips = new String[ipslength];
         int comConut = 0;

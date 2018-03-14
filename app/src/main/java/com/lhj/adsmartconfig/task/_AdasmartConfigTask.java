@@ -113,7 +113,7 @@ public class _AdasmartConfigTask implements _IAdasmartConfigTask{
                 }
             }
         }catch (Exception ex){
-
+//            ex.printStackTrace();
         }
     }
 

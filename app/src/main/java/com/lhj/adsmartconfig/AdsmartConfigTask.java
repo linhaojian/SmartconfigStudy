@@ -44,6 +44,7 @@ public class AdsmartConfigTask implements IAdsmartConfigTask {
     @Override
     public IAdsmartConfigTask start() {
         adsmartConfigTaskParameter.getAdsmartConfigEntity().setLocalIp(AdConNetUtil.getLocalInetAddress(context));
+        adsmartConfigTaskParameter.getAdsmartConfigEntity().setRouterMac(AdConNetUtil.getConnectedWifiMacAddress(context));
         _adasmartConfigTask.execute();
         return this;
     }

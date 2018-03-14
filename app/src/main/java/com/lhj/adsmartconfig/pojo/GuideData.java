@@ -5,7 +5,7 @@ package com.lhj.adsmartconfig.pojo;
  */
 
 public class GuideData {
-    private byte[] guideData = new byte[0];
+    private byte[] guideData = new byte[300];
 
     public byte[] getGuideData() {
         return guideData;

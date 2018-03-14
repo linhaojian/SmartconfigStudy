@@ -16,8 +16,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.espressif.iot.esptouch.EsptouchTask;
-import com.espressif.iot.esptouch.udp.UDPSocketClient;
 import com.lhj.adsmartconfig.AdsmartConfigTask;
 import com.lhj.adsmartconfig.OnAdConOnResults;
 

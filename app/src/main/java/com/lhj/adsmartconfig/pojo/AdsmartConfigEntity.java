@@ -9,6 +9,7 @@ public class AdsmartConfigEntity {
     private String pw;
     private String type;
     private String localIp;
+    private String routerMac;
 
     public String getSsid() {
         return ssid;
@@ -42,6 +43,14 @@ public class AdsmartConfigEntity {
         this.localIp = localIp;
     }
 
+    public String getRouterMac() {
+        return routerMac;
+    }
+
+    public void setRouterMac(String routerMac) {
+        this.routerMac = routerMac;
+    }
+
     @Override
     public String toString() {
         return "AdsmartConfigEntity{" +
@@ -49,6 +58,7 @@ public class AdsmartConfigEntity {
                 ", pw='" + pw + '\'' +
                 ", type='" + type + '\'' +
                 ", localIp='" + localIp + '\'' +
+                ", routerMac='" + routerMac + '\'' +
                 '}';
     }
 }

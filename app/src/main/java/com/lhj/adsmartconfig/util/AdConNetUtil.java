@@ -1,12 +1,14 @@
 package com.lhj.adsmartconfig.util;
 
 import android.content.Context;
+import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.util.Log;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.List;
 
 /**
  * Created by Administrator on 2018/3/9.
@@ -26,13 +28,24 @@ public class AdConNetUtil {
         WifiInfo wifiInfo = wm.getConnectionInfo();
         int localAddrInt = wifiInfo.getIpAddress();
         String localAddrStr = __formatString(localAddrInt);
-//        InetAddress localInetAddr = null;
-//        try {
-//            localInetAddr = InetAddress.getByName(localAddrStr);
-//        } catch (UnknownHostException e) {
-//            e.printStackTrace();
-//        }
         return localAddrStr;
+    }
+
+    /**
+     *  Get the routing MAC
+     * @param context
+     * @return
+     */
+    public static String getConnectedWifiMacAddress(Context context){
+        String connectedWifiMacAddress = "";
+        WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        if (wifiManager != null) {
+            WifiInfo info = wifiManager.getConnectionInfo();
+            if(info!=null){
+                connectedWifiMacAddress = info.getBSSID();
+            }
+        }
+        return connectedWifiMacAddress;
     }
 
 
