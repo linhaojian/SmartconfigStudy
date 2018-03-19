@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.lhj.adsmartconfig.AdsmartConfigTask;
 import com.lhj.adsmartconfig.OnAdConOnResults;
+import com.lhj.pins.Pins;
+import com.lhj.widget.Widget;
 
 import java.util.concurrent.Executors;
 
@@ -105,6 +107,9 @@ public class MainActivity extends AppCompatActivity {
         wifipw_et = findViewById(R.id.wifipw_et);
         lienar = findViewById(R.id.linear);
         scrollView = findViewById(R.id.scrollView);
+
+        Log.e("linhaojian",new Pins().pins());
+        Log.e("linhaojian",new Widget().widget());
     }
 
     @Override

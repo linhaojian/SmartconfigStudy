@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/SmartconfigStudy.iml" filepath="$PROJECT_DIR$/SmartconfigStudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/adsmarrconfig/adsmarrconfig.iml" filepath="$PROJECT_DIR$/adsmarrconfig/adsmarrconfig.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pins/pins.iml" filepath="$PROJECT_DIR$/pins/pins.iml" />
     </modules>
   </component>
 </project>

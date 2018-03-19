@@ -1,1 +1,1 @@
-include ':app', ':adsmarrconfig'
+include ':app', ':adsmarrconfig', ':pins'
