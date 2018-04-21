@@ -118,7 +118,8 @@ public class AdsmartConfigTaskParameter {
         byte[] typebuff2Three = new byte[lengthThree];
         System.arraycopy(typebuff,0,typebuff2Three,0,typebuff.length);
         int lengthSb = (typebuff2Three.length/3)==0?1:(typebuff2Three.length/3);
-        String[] stringbuff = new String[lengthSb+(typebuff.length*3)+3];
+//        String[] stringbuff = new String[lengthSb+(typebuff.length*3)+1];
+        String[] stringbuff = new String[lengthSb+(typebuff.length)+1];
         // 组播
         int stringCount = 0;
         for(int i=0;i<typebuff2Three.length;){
@@ -129,27 +130,27 @@ public class AdsmartConfigTaskParameter {
             list.add(guideData.getGuideBuff(guideDataDefault));
         }
         //广播
-        for(int i=1;i<4;i++){
+        for(int i=0;i<1;i++){
             stringbuff[stringCount] = broadcast;
             GuideData guideData = new GuideData();
             list.add(guideData.getGuideBuff(i));
             stringCount++;
         }
-        byte[] bcbuff = new byte[typebuff.length*3];
-        CRC8 crc8 = new CRC8();
-        int bcbuffCount = 0;
-        for(int i=0;i<bcbuff.length;i=i+3){
-            bcbuff[i] = (byte) bcbuffCount;
-            bcbuff[i+1] = typebuff[bcbuffCount];
-            bcbuff[i+2] = crc8.calcCrc8(new byte[]{bcbuff[i],bcbuff[i+1]});
-            bcbuffCount++;
-        }
+//        byte[] bcbuff = new byte[typebuff.length*3];
+//        CRC8 crc8 = new CRC8();
+//        int bcbuffCount = 0;
+//        for(int i=0;i<bcbuff.length;i=i+3){
+//            bcbuff[i] = (byte) bcbuffCount;
+//            bcbuff[i+1] = typebuff[bcbuffCount];
+//            bcbuff[i+2] = crc8.calcCrc8(new byte[]{bcbuff[i],bcbuff[i+1]});
+//            bcbuffCount++;
+//        }
         int typebuffCount = 0;
         int comDataLength = 0;
         for(;stringCount<stringbuff.length;stringCount++){
             stringbuff[stringCount] = broadcast;
             GuideData guideData = new GuideData();
-            comDataLength = bcbuff[typebuffCount] & 0xff;
+            comDataLength = typebuff[typebuffCount] & 0xff;
             list.add(guideData.getGuideBuff(comDataLength));
             typebuffCount++;
         }
