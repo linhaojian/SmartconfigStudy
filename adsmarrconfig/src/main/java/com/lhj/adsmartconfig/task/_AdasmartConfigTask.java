@@ -1,5 +1,7 @@
 package com.lhj.adsmartconfig.task;
 
+import android.util.Log;
+
 import com.lhj.adsmartconfig.AdsmartConfigTaskParameter;
 import com.lhj.adsmartconfig.OnAdConOnResults;
 import com.lhj.adsmartconfig.pojo.ClientEnity;
@@ -34,37 +36,12 @@ public class _AdasmartConfigTask implements _IAdasmartConfigTask{
 
     @Override
     public ClientEnity dealGuideData() {
-        GuideData guideData = new GuideData();
-        byte[] guidedata = guideData.getGuideData();
-        String[] guideIps = adsmartConfigTaskParameter.getGuideIp();
-        if(guideIps.length>0){
-            List<byte[]> list = new ArrayList<>();
-            for(int i=0;i<guideIps.length;i++){
-                list.add(guidedata);
-            }
-            ClientEnity clientEnity = new ClientEnity();
-            clientEnity.setDatas(list);
-            clientEnity.setIps(guideIps);
-            return clientEnity;
-        }
-        return null;
+        return adsmartConfigTaskParameter.getGuideIp();
     }
 
     @Override
     public ClientEnity dealCombinationData() {
-        CombinationData combinationData = new CombinationData();
-        String[] combinationIps = adsmartConfigTaskParameter.getCombinationIp();
-        if(combinationIps.length>0){
-            List<byte[]> list = new ArrayList<>();
-            for(int i=0;i<combinationIps.length;i++){
-                list.add(combinationData.getCombinationBuff(combinationIps[i]));
-            }
-            ClientEnity clientEnity = new ClientEnity();
-            clientEnity.setDatas(list);
-            clientEnity.setIps(combinationIps);
-            return clientEnity;
-        }
-        return null;
+        return adsmartConfigTaskParameter.getCombinationIp();
     }
 
     @Override
@@ -87,24 +64,26 @@ public class _AdasmartConfigTask implements _IAdasmartConfigTask{
                             clientEnity.getDatas().get(i).length,
                             InetAddress.getByName(clientEnity.getIps()[i]),
                             adsmartConfigTaskParameter.getTargetPort());
-//                    Log.e("linhaojian",
-//                            "Mac: " + clientEnity.getIps()[i] + " " +
-//                                    "Port: " + adsmartConfigTaskParameter.getTargetPort() + " " +
-//                                    "Length: " + (clientEnity.getDatas().get(i).length));
+                    if((i+1)%3==0){
+                        Thread.sleep(adsmartConfigTaskParameter.getGuidiecombinationIntervalMillisecond());
+                    }
+                    Log.e("linhaojian",
+                            "Mac: " + clientEnity.getIps()[i] + " " +
+                                    "Port: " + adsmartConfigTaskParameter.getTargetPort() + " " +
+                                    "Length: " + (clientEnity.getDatas().get(i).length));
                 }
                 sendCount++;
                 if (isGudie) {
                     if (sendCount > adsmartConfigTaskParameter.getGuideLimteCount()) {
                         isGudie = false;
                         sendCount = 0;
-//                        Log.w("linhaojian", "---------------------------------------------------------------------------");
+                        Log.w("linhaojian", "---------------------------------------------------------------------------");
                     }
                 } else {
                     if (sendCount > adsmartConfigTaskParameter.getCombinationLimteCount()) {
                         isGudie = true;
                         sendCount = 0;
-//                        Log.w("linhaojian", "---------------------------------------------------------------------------");
-                        Thread.sleep(adsmartConfigTaskParameter.getGuidiecombinationIntervalMillisecond());
+                        Log.w("linhaojian", "---------------------------------------------------------------------------");
                     }
                 }
             }
@@ -120,11 +99,13 @@ public class _AdasmartConfigTask implements _IAdasmartConfigTask{
             if(onAdConOnResults!=null){
                 try {
                     UdpAdConServer.ReceiveEntity receiveEntity = udpAdConServer.receiveBuff();
-                    byte[] datas = receiveEntity.getDatas();
-                    String mac = new String(datas,"ISO-8859-1");
-                    if(adsmartConfigTaskParameter.addListForResult(mac)){
-                        responServer(mac,receiveEntity.getIp(),receiveEntity.getPort());
-                        onAdConOnResults.OnAdCoResults(receiveEntity.getIp(),mac);
+                    if(receiveEntity!=null){
+                        byte[] datas = receiveEntity.getDatas();
+                        String mac = new String(datas,"ISO-8859-1");
+                        if(adsmartConfigTaskParameter.addListForResult(receiveEntity.getIp(),mac)){
+                            responServer(mac,receiveEntity.getIp(),receiveEntity.getPort());
+                            onAdConOnResults.OnAdCoResults(receiveEntity.getIp(),mac);
+                        }
                     }
                 }catch (Exception ex){
                     ex.printStackTrace();

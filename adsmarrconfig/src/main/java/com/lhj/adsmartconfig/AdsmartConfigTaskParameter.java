@@ -1,12 +1,18 @@
 package com.lhj.adsmartconfig;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 
 import com.lhj.adsmartconfig.pojo.AdsmartConfigEntity;
+import com.lhj.adsmartconfig.pojo.ClientEnity;
+import com.lhj.adsmartconfig.pojo.CombinationData;
+import com.lhj.adsmartconfig.pojo.GuideData;
 import com.lhj.adsmartconfig.util.CRC8;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Administrator on 2018/3/9.
@@ -14,16 +20,17 @@ import java.util.ArrayList;
 
 public class AdsmartConfigTaskParameter {
     private AdsmartConfigEntity adsmartConfigEntity;
-    private int guideLimteCount = 6;
-    private int combinationLimteCount = 12;
+    private int guideLimteCount = 5;
+    private int combinationLimteCount = 1;
     private int intervalMillisecond = 50;
     private int intervalGudieComCount = 10;
     private int targetPort = 7203;
     private int guideFirstIp = 235;
     private int combinationFirstIp = 235;
-    private int guidiecombinationIntervalMillisecond = 50;
+    private int guidiecombinationIntervalMillisecond = 30;
     private int receiveServerCount = 3;
     private ArrayList<String> executeList;
+    private String broadcast = "255.255.255.255";
 
     public AdsmartConfigTaskParameter(){
         adsmartConfigEntity = new AdsmartConfigEntity();
@@ -90,30 +97,65 @@ public class AdsmartConfigTaskParameter {
         this.receiveServerCount = receiveServerCount;
     }
 
-    public boolean addListForResult(String mac){
+    public boolean addListForResult(String ip,String mac){
         boolean macExist = false;
-        if(executeList!=null&&!executeList.contains(mac)){
-            executeList.add(mac);
-            macExist = true;
+        if((!adsmartConfigEntity.getLocalIp().equals(ip))&&(!TextUtils.isEmpty(mac))){
+            if(executeList!=null&&!executeList.contains(mac)){
+                executeList.add(mac);
+                macExist = true;
+            }
         }
         return macExist;
     }
 
-    public String[] getGuideIp() {
+    public ClientEnity getGuideIp() {
+        byte guideDataDefault = 1;
+        ClientEnity clientEnity = new ClientEnity();
+        List<byte[]> list = new ArrayList<>();
         String type = adsmartConfigEntity.getType();
         byte[] typebuff = type.getBytes();
         int lengthThree = (typebuff.length/3)==0?3:(typebuff.length%3)==0?(typebuff.length):(typebuff.length+(3-(typebuff.length%3)));
         byte[] typebuff2Three = new byte[lengthThree];
         System.arraycopy(typebuff,0,typebuff2Three,0,typebuff.length);
         int lengthSb = (typebuff2Three.length/3)==0?1:(typebuff2Three.length/3);
-        String[] stringbuff = new String[lengthSb];
+        String[] stringbuff = new String[lengthSb+(typebuff.length*3)+3];
+        // 组播
         int stringCount = 0;
         for(int i=0;i<typebuff2Three.length;){
             stringbuff[stringCount] = guideFirstIp+"."+typebuff2Three[i]+"."+typebuff2Three[i+1]+"."+typebuff2Three[i+2];
             i=i+3;
             stringCount++;
+            GuideData guideData = new GuideData();
+            list.add(guideData.getGuideBuff(guideDataDefault));
         }
-        return stringbuff;
+        //广播
+        for(int i=1;i<4;i++){
+            stringbuff[stringCount] = broadcast;
+            GuideData guideData = new GuideData();
+            list.add(guideData.getGuideBuff(i));
+            stringCount++;
+        }
+        byte[] bcbuff = new byte[typebuff.length*3];
+        CRC8 crc8 = new CRC8();
+        int bcbuffCount = 0;
+        for(int i=0;i<bcbuff.length;i=i+3){
+            bcbuff[i] = (byte) bcbuffCount;
+            bcbuff[i+1] = typebuff[bcbuffCount];
+            bcbuff[i+2] = crc8.calcCrc8(new byte[]{bcbuff[i],bcbuff[i+1]});
+            bcbuffCount++;
+        }
+        int typebuffCount = 0;
+        int comDataLength = 0;
+        for(;stringCount<stringbuff.length;stringCount++){
+            stringbuff[stringCount] = broadcast;
+            GuideData guideData = new GuideData();
+            comDataLength = bcbuff[typebuffCount] & 0xff;
+            list.add(guideData.getGuideBuff(comDataLength));
+            typebuffCount++;
+        }
+        clientEnity.setIps(stringbuff);
+        clientEnity.setDatas(list);
+        return clientEnity;
     }
 
     private int[] dealCombinaBuffIp(String ip,byte[] pwbuff,String mac){
@@ -147,12 +189,17 @@ public class AdsmartConfigTaskParameter {
         return comdiBuff;
     }
 
-    public String[] getCombinationIp() {
+    public ClientEnity getCombinationIp() {
         // 235.serial.data.data
+        byte combinationDataDefault = 1;
+        ClientEnity clientEnity = new ClientEnity();
+        List<byte[]> list = new ArrayList<>();
         byte[] pwbuff = TextUtils.isEmpty(adsmartConfigEntity.getPw())?new byte[0]:adsmartConfigEntity.getPw().getBytes();
         int[] combuff = dealCombinaBuffIp(adsmartConfigEntity.getLocalIp(),pwbuff,adsmartConfigEntity.getRouterMac());
         int ipslength = (combuff.length/2) + (combuff.length%2);
-        String[] ips = new String[ipslength];
+        int bclength = combuff.length*3;
+        String[] ips = new String[ipslength+bclength];
+        // 组播
         int comConut = 0;
         for(int i=0;i<ipslength;i++){
             int b1 = i;
@@ -162,8 +209,31 @@ public class AdsmartConfigTaskParameter {
                 b3 = (combuff[comConut+1]&0xff);
             }
             ips[i] = combinationFirstIp+"."+b1+"."+b2+"."+b3;
+            CombinationData combinationData = new CombinationData();
+            list.add(combinationData.getCombinationBuff(combinationDataDefault));
             comConut=comConut+2;
         }
-        return ips;
+        //广播
+        byte[] bcbuff = new byte[bclength];
+        CRC8 crc8 = new CRC8();
+        int bcbuffCount = 0;
+        for(int i=0;i<bcbuff.length;i=i+3){
+            bcbuff[i] = (byte) bcbuffCount;
+            bcbuff[i+1] = (byte) combuff[bcbuffCount];
+            bcbuff[i+2] = crc8.calcCrc8(new byte[]{bcbuff[i],bcbuff[i+1]});
+            bcbuffCount++;
+        }
+        comConut = 0;
+        int comDataLength = 0;
+        for(int i =ipslength;i<ips.length;i++){
+            ips[i] = broadcast;
+            CombinationData combinationData = new CombinationData();
+            comDataLength = bcbuff[comConut] & 0xff;
+            list.add(combinationData.getCombinationBuff(comDataLength));
+            comConut++;
+        }
+        clientEnity.setDatas(list);
+        clientEnity.setIps(ips);
+        return clientEnity;
     }
 }

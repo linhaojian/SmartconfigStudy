@@ -18,4 +18,8 @@ public class CombinationData {
         return new byte[length];
     }
 
+    public byte[] getCombinationBuff(int data){
+        return new byte[data];
+    }
+
 }
